@@ -78,9 +78,9 @@
                         <div class="project-pc">
                             <ul class="filter cl">
                                 <li class="item category">
-                                    <p class="name"><span class="text">选择您的项目类型</span><i class="icon iconfont icon-arrow-down"></i></p>
-                                    <div class="product wrap project-pop">
-                                        <ul class="list cl" id="categoryList">
+                                    <p class="name"><span class="text" @click='toggleNeeds("categoryList")'>选择您的项目类型</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <div class="product wrap project-pop" ref="categoryList">
+                                        <ul class="list cl" id="categoryList" >
                                             <li data-key="1" data-val="移动APP开发"><img src="@/assets/image/p5.png">
                                                 <p>移动APP开发</p>
                                             </li>
@@ -115,8 +115,8 @@
                                     </div>
                                 </li>
                                 <li class="item term">
-                                    <p class="name"><span class="text">选择您的项目时间</span><i class="icon iconfont icon-arrow-down"></i></p>
-                                    <ul class="filterlist project-pop" id="termList">
+                                    <p class="name"><span class="text" @click='toggleNeeds("termList")'>选择您的项目时间</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <ul class="filterlist project-pop" id="termList"  ref="termList">
                                         <li data-key="1" data-val="超过6个月">超过6个月</li>
                                         <li data-key="2" data-val="3-6个月">3-6个月</li>
                                         <li data-key="3" data-val="1-3个月">1-3个月</li>
@@ -125,8 +125,8 @@
                                     </ul>
                                 </li>
                                 <li class="item urgency">
-                                    <p class="name"><span class="text">选择项目紧急程度</span><i class="icon iconfont icon-arrow-down"></i></p>
-                                    <ul class="filterlist project-pop" id="urgencyList">
+                                    <p class="name"><span class="text" @click='toggleNeeds("urgencyList")'>选择项目紧急程度</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <ul class="filterlist project-pop" id="urgencyList" ref="urgencyList">
                                         <li data-key="1" data-val="不紧急">不紧急</li>
                                         <li data-key="2" data-val="一般">一般</li>
                                         <li data-key="3" data-val="非常紧急">非常紧急</li>
@@ -453,7 +453,23 @@ export default {
   computed: {},
 
 
-  methods: {}
+  methods: {
+    toggleNeeds:function(type) {
+
+      let theType = {type:type};
+      
+      if(type == 'categoryList'){
+          this.$refs.categoryList.style.display =  (this.$refs.categoryList.style.display === 'block')? 'none':'block';
+      }else
+      if(type == 'termList'){
+          this.$refs.termList.style.display =  (this.$refs.termList.style.display === 'block')? 'none':'block';
+      }
+      else{
+         this.$refs.urgencyList.style.display =  (this.$refs.urgencyList.style.display === 'block')? 'none':'block';
+      }
+      
+    }
+  }
 }
 
 </script>
