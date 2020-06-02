@@ -81,35 +81,9 @@
                                     <p class="name"><span class="text" @click='toggleNeeds("categoryList")'>{{this.projectType}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <div class="product wrap project-pop" ref="categoryList">
                                         <ul class="list cl" id="categoryList" >
-                                            <li data-key="1" data-val="移动APP开发"><img src="@/assets/image/p5.png">
-                                                <p>移动APP开发</p>
-                                            </li>
-                                            <li data-key="7" data-val="微信小程序"><img src="@/assets/image/p6.png">
-                                                <p>微信小程序</p>
-                                            </li>
-                                            <li data-key="18" data-val="网站建设"><img src="@/assets/image/p4.png">
-                                                <p>网站建设</p>
-                                            </li>
-                                            <li data-key="27" data-val="平台开发"><img src="@/assets/image/p4.png">
-                                                <p>平台开发</p>
-                                            </li>
-                                            <li data-key="37" data-val="文娱直播"><img src="@/assets/image/p7.png">
-                                                <p>文娱直播</p>
-                                            </li>
-                                            <li data-key="43" data-val="棋牌游戏"><img src="@/assets/image/p8.png">
-                                                <p>棋牌游戏</p>
-                                            </li>
-                                            <li data-key="48" data-val="原型设计"><img src="@/assets/image/p1.png">
-                                                <p>原型设计</p>
-                                            </li>
-                                            <li data-key="55" data-val="UI设计"><img src="@/assets/image/p2.png">
-                                                <p>UI设计</p>
-                                            </li>
-                                            <li data-key="61" data-val="平面设计"><img src="@/assets/image/p3.png">
-                                                <p>平面设计</p>
-                                            </li>
-                                            <li data-key="71" data-val="LOGO设计"><img src="@/assets/image/p4.png">
-                                                <p>LOGO设计</p>
+                                            <li v-for="(item,index) in projectOptions.type" :key=index @click='chooseType("type",item.name)'>
+                                                  <img :src=item.src :alt=item.name>
+                                                  <p>{{item.name}}</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -117,19 +91,18 @@
                                 <li class="item term">
                                     <p class="name"><span class="text" @click='toggleNeeds("termList")'>{{this.projectTime}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <ul class="filterlist project-pop" id="termList"  ref="termList">
-                                        <li data-key="1" data-val="超过6个月">超过6个月</li>
-                                        <li data-key="2" data-val="3-6个月">3-6个月</li>
-                                        <li data-key="3" data-val="1-3个月">1-3个月</li>
-                                        <li data-key="4" data-val="少于1个月">少于1个月</li>
-                                        <li data-key="5" data-val="少于1周">少于1周</li>
+                                      <li v-for="(item,index) in projectOptions.time" :key=index @click='chooseType("time",item)'>
+                                        {{item}}
+                                      </li>
+                                  
                                     </ul>
                                 </li>
                                 <li class="item urgency">
                                     <p class="name"><span class="text" @click='toggleNeeds("urgencyList")'>{{this.projectUrgency}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <ul class="filterlist project-pop" id="urgencyList" ref="urgencyList">
-                                        <li data-key="1" data-val="不紧急">不紧急</li>
-                                        <li data-key="2" data-val="一般">一般</li>
-                                        <li data-key="3" data-val="非常紧急">非常紧急</li>
+                                      <li v-for="(item, index) in projectOptions.urgency" :key=index @click='chooseType("urgency",item)'>
+                                            {{item}}
+                                      </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -447,7 +420,25 @@ export default {
     return {
       projectType:"选择您的项目类型",
       projectTime:"选择您的项目时间",
-      projectUrgency:"选择项目紧急程度"
+      projectUrgency:"选择项目紧急程度",
+      projectOptions:{
+        // type:['移动APP开发','微信小程序','网站建设','平台开发','文娱直播','棋牌游戏','原型设计','UI设计','平面设计','LOGO设计'],
+        type:[
+          {name:'移动APP开发',src:'../../static/image/p1.png'},
+          {name:'微信小程序',src:'../../static/image/p2.png'},
+          {name:'网站建设',src:'../../static/image/p3.png'},
+          {name:'平台开发',src:'../../static/image/p4.png'},
+          {name:'文娱直播',src:'../../static/image/p5.png'},
+          {name:'棋牌游戏',src:'../../static/image/p6.png'},
+          {name:'原型设计',src:'../../static/image/p7.png'},
+          {name:'UI设计',src:'../../static/image/p8.png'},
+          {name:'平面设计',src:'../../static/image/p2.png'},
+          {name:'LOGO设计',src:'../../static/image/p3.png'},
+        ],
+
+        time:['超过6个月','3-6个月','1-3个月','少于1个月','少于1周'],
+        urgency:['不紧急','一般','非常紧急'],
+      }
     };
   },
 
@@ -460,16 +451,21 @@ export default {
     toggleNeeds(type) {
 
       let theType = {type:type};
-      this.closeNeeds();
       
       if(type == 'categoryList'){
           this.$refs.categoryList.style.display =  (this.$refs.categoryList.style.display === 'block')? 'none':'block';
+                this.$refs.termList.style.display='none';
+      this.$refs.urgencyList.style.display='none';
       }else
       if(type == 'termList'){
           this.$refs.termList.style.display =  (this.$refs.termList.style.display === 'block')? 'none':'block';
+            this.$refs.categoryList.style.display='none';
+             this.$refs.urgencyList.style.display='none';
       }
       else{
          this.$refs.urgencyList.style.display =  (this.$refs.urgencyList.style.display === 'block')? 'none':'block';
+               this.$refs.categoryList.style.display='none';
+      this.$refs.termList.style.display='none';
       }
       
     },
@@ -480,7 +476,16 @@ export default {
     },
     chooseType(list,value){
       if(list === 'type'){
-        
+          this.projectType = value;
+           this.$refs.categoryList.style.display='none';
+      }
+      if(list === 'time'){
+          this.projectTime = value;
+          this.$refs.termList.style.display='none';
+      }
+      if(list === 'urgency'){
+          this.projectUrgency = value;
+          this.$refs.urgencyList.style.display='none';
       }
     }
   }
