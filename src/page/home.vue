@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="header header-mb cl">
-            <i class="menu-btn icon iconfont icon-nav-menu" id="showIndexNav"></i>
+            <i class="menu-btn icon iconfont icon-nav-menu" id="showIndexNav" @click="toggleMask"></i>
             <!-- <a href="javascript:;" class="push-btn" rel="nofollow">发布项目</a> -->
         </div>
         <div class="index-nav" id="indexNav">
@@ -412,7 +412,11 @@
 
 
 
-
+    <div class="mask" :class='ifMask?"active":""'>
+      <li v-for="(item,index) in headerLink" :key=index >
+          {{item}}
+      </li>
+    </div>
 
 
 
@@ -442,8 +446,10 @@ export default {
         ],
 
         time:['超过6个月','3-6个月','1-3个月','少于1个月','少于1周'],
-        urgency:['不紧急','一般','非常紧急'],
-      }
+        urgency:['不紧急','一般','非常紧急']
+      },
+      headerLink:['跳转1','跳转1','跳转1','跳转1','跳转1'],
+      ifMask:false
     };
   },
 
@@ -542,6 +548,9 @@ export default {
            console.log("this.projectUrgency========>", this.projectUrgency );
 
       }
+    },
+    toggleMask(){
+      this.ifMask = !this.ifMask;
     }
   }
 }
