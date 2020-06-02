@@ -412,7 +412,7 @@
 
 
 
-    <div class="mask" :class='ifMask?"active":""'>
+    <div class="mask2" :class='ifMask?"active":""'>
       <li v-for="(item,index) in headerLink" :key=index >
           {{item}}
       </li>
@@ -456,9 +456,24 @@ export default {
   components: {},
 
   computed: {},
-//   mounted: {
+ mounted:function(){  
+            
+          //  this.$axios.get("http://192.168.1.103/api/Project/getInfo")
+          //   .then(res=>{
+          //     console.log(res)
+          //   })
+          //   .catch(err=>{
+          //     console.log(err)
+          //   })
+              this.$axios.get("http://192.168.1.103/api/Project/upRelease")
+            .then(res=>{
+              console.log(res)
+            })
+            .catch(err=>{
+              console.log(err)
+            })         
 
-// },
+        }  ,
 
   methods: {
     toggleNeeds(type) {
