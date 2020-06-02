@@ -111,24 +111,22 @@
                         <div class="project-mb">
                             <div class="filter">
                                 <div class="group">
-                                    <select class="category" id="categoryMbList" value="0">
-                                    <option disabled="disabled" selected="" value="0">选择项目类型</option>
-                                <option value="定制开发">定制开发</option><option value="创意设计">创意设计</option><option value="人才服务">人才服务</option><option value="网站建设">网站建设</option><option value="APP开发">APP开发</option><option value="微信开发">微信开发</option><option value="系统开发">系统开发</option><option value="产品/UI设计">产品/UI设计</option><option value="测试服务">测试服务</option></select>
+                                  <select class="category" id="categoryMbList" value="选择项目类型" @change='chooseType("type",$event)'>
+                                    <option disabled="disabled" selected="" value="选择项目类型">选择项目类型</option>
+                                    <option v-for='(item,index) in projectOptions.type' :key=index :value="item.name" >{{item.name}}</option>
+                                </select>
                                 </div>
                                 <div class="group">
-                                    <select class="term" id="termMbList" value="0">
-                                        <option disabled="disabled" selected="" value="0">选择项目时间</option>
-                                        <option value="超过6个月">超过6个月</option>
-                                        <option value="3-6个月">3-6个月</option>
-                                        <option value="1-3个月">1-3个月</option>
-                                        <option value="少于1个月">少于1个月</option>
-                                        <option value="少于1周">少于1周</option>
+                                    <select class="term" id="termMbList" value="0"  @change='chooseType("time",$event)'>
+                                        <option disabled="disabled" selected="" >选择项目时间</option>
+                                      <option v-for='(item,index) in projectOptions.time' :key=index :value="item" >{{item}}</option>
                                     </select>
                                 </div>
                                 <div class="group">
-                                    <select class="urgency" id="urgencyMbList" value="0">
+                                    <select class="urgency" id="urgencyMbList" value="0"  @change='chooseType("urgency",$event)'>
                                     <option disabled="disabled" selected="" value="0">项目紧急程度</option>
-                                <option value="不紧急">不紧急</option><option value="一般">一般</option><option value="非常紧急">非常紧急</option></select>
+                                <option v-for='(item,index) in projectOptions.urgency' :key=index :value="item" >{{item}}</option>
+                                </select>
                                 </div>
                             </div>
                             <a href="javascript:;" class="btn" id="index_push_mobile">马上发布</a>
@@ -411,6 +409,13 @@
         <span class="close-tips"></span>
         </span>
     </div>
+
+
+
+
+
+
+
   </div>
 </template>
 
@@ -445,7 +450,9 @@ export default {
   components: {},
 
   computed: {},
+//   mounted: {
 
+// },
 
   methods: {
     toggleNeeds(type) {
@@ -474,18 +481,66 @@ export default {
       this.$refs.termList.style.display='none';
       this.$refs.urgencyList.style.display='none';
     },
+
+    // test(list,event){
+    //   var value = event.target.value;
+      
+    //      if(list === 'type'){
+    //       this.projectType = value;
+    //       console.log("this.projectType========>", this.projectType );
+        
+    //   }
+    //   if(list === 'time'){
+    //     this.projectTime = value;
+    //       console.log("this.projectTime========>", this.projectTime );
+     
+    //   }
+    //   if(list === 'urgency'){
+    //         this.projectUrgency = value;
+    //       console.log("this.projectUrgency========>", this.projectUrgency );
+    //   }
+    // },
+
     chooseType(list,value){
+      if( typeof value == 'object'){
+
+
+         if(list === 'type'){
+          this.projectType = value.target.value;
+          console.log("this.projectType========>", this.projectType );
+        
+      }
+      if(list === 'time'){
+        this.projectTime = value.target.value;
+          console.log("this.projectTime========>", this.projectTime );
+     
+      }
+      if(list === 'urgency'){
+            this.projectUrgency = value.target.value;
+          console.log("this.projectUrgency========>", this.projectUrgency );
+
+      }
+
+
+        return false;
+      }
+      console.log("pc端");
+
       if(list === 'type'){
           this.projectType = value;
            this.$refs.categoryList.style.display='none';
+            console.log("this.projectType========>", this.projectType );
       }
       if(list === 'time'){
           this.projectTime = value;
           this.$refs.termList.style.display='none';
+          console.log("this.projectTime========>", this.projectTime );
       }
       if(list === 'urgency'){
           this.projectUrgency = value;
           this.$refs.urgencyList.style.display='none';
+           console.log("this.projectUrgency========>", this.projectUrgency );
+
       }
     }
   }
