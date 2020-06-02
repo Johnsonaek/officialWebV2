@@ -78,7 +78,7 @@
                         <div class="project-pc">
                             <ul class="filter cl">
                                 <li class="item category">
-                                    <p class="name"><span class="text" @click='toggleNeeds("categoryList")'>{{this.projectType}}</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <p class="name"  @click='toggleNeeds("categoryList")'><span class="text">{{this.projectType}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <div class="product wrap project-pop" ref="categoryList">
                                         <ul class="list cl" id="categoryList" >
                                             <li v-for="(item,index) in projectOptions.type" :key=index @click='chooseType("type",item.name)'>
@@ -89,7 +89,7 @@
                                     </div>
                                 </li>
                                 <li class="item term">
-                                    <p class="name"><span class="text" @click='toggleNeeds("termList")'>{{this.projectTime}}</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <p class="name" @click='toggleNeeds("termList")'><span class="text" >{{this.projectTime}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <ul class="filterlist project-pop" id="termList"  ref="termList">
                                       <li v-for="(item,index) in projectOptions.time" :key=index @click='chooseType("time",item)'>
                                         {{item}}
@@ -98,7 +98,7 @@
                                     </ul>
                                 </li>
                                 <li class="item urgency">
-                                    <p class="name"><span class="text" @click='toggleNeeds("urgencyList")'>{{this.projectUrgency}}</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <p class="name" @click='toggleNeeds("urgencyList")'><span class="text" >{{this.projectUrgency}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <ul class="filterlist project-pop" id="urgencyList" ref="urgencyList">
                                       <li v-for="(item, index) in projectOptions.urgency" :key=index @click='chooseType("urgency",item)'>
                                             {{item}}
@@ -106,7 +106,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <a href="javascript:;" target="_blank" class="btn" onclick="_czc.push(﻿[&#39;_trackEvent&#39;,&#39;获取方案_pc&#39;,&#39;click&#39;]);" id="index_push_pc">马上发布项目</a>
+                            <a href="javascript:;" target="_blank" class="btn" id="index_push_pc">马上发布项目</a>
                         </div>
                         <div class="project-mb">
                             <div class="filter">
@@ -131,7 +131,7 @@
                                 <option value="不紧急">不紧急</option><option value="一般">一般</option><option value="非常紧急">非常紧急</option></select>
                                 </div>
                             </div>
-                            <a href="javascript:;" target="_blank" class="btn" id="index_push_mobile">马上发布</a>
+                            <a href="javascript:;" class="btn" id="index_push_mobile">马上发布</a>
                         </div>
                     </div>
                     <!-- project E -->
