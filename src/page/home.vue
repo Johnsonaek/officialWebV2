@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="header header-mb cl">
-            <i class="menu-btn icon iconfont icon-nav-menu" id="showIndexNav" @click="toggleMask"></i>
+            <i class="menu-btn icon iconfont icon-nav-menu" id="showIndexNav" @click='$(ifMask = !ifMask)'></i>
             <!-- <a href="javascript:;" class="push-btn" rel="nofollow">发布项目</a> -->
         </div>
         <div class="index-nav" id="indexNav">
@@ -78,58 +78,58 @@
                         <div class="project-pc">
                             <ul class="filter cl">
                                 <li class="item category">
-                                    <p class="name"  @click='toggleNeeds("categoryList")'><span class="text">{{this.projectType}}</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <p class="name"  @click='toggleNeeds("categoryList")'><span class="text">{{this.projectType.title}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <div class="product wrap project-pop" ref="categoryList">
                                         <ul class="list cl" id="categoryList" >
-                                            <li v-for="(item,index) in projectOptions.type" :key=index @click='chooseType("type",item.name)'>
-                                                  <img :src=item.src :alt=item.name>
-                                                  <p>{{item.name}}</p>
+                                            <li v-for="(item,index) in projectOptions.type" :key=index @click='chooseType("type",item)'>
+                                                  <img :src='item.img' :alt='item.title'>
+                                                  <p>{{item.title}}</p>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="item term">
-                                    <p class="name" @click='toggleNeeds("termList")'><span class="text" >{{this.projectTime}}</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <p class="name" @click='toggleNeeds("termList")'><span class="text" >{{this.projectTime.title}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <ul class="filterlist project-pop" id="termList"  ref="termList">
                                       <li v-for="(item,index) in projectOptions.time" :key=index @click='chooseType("time",item)'>
-                                        {{item}}
+                                        {{item.title}}
                                       </li>
                                   
                                     </ul>
                                 </li>
                                 <li class="item urgency">
-                                    <p class="name" @click='toggleNeeds("urgencyList")'><span class="text" >{{this.projectUrgency}}</span><i class="icon iconfont icon-arrow-down"></i></p>
+                                    <p class="name" @click='toggleNeeds("urgencyList")'><span class="text" >{{this.projectUrgency.title}}</span><i class="icon iconfont icon-arrow-down"></i></p>
                                     <ul class="filterlist project-pop" id="urgencyList" ref="urgencyList">
                                       <li v-for="(item, index) in projectOptions.urgency" :key=index @click='chooseType("urgency",item)'>
-                                            {{item}}
+                                            {{item.title}}
                                       </li>
                                     </ul>
                                 </li>
                             </ul>
-                            <a href="javascript:;" target="_blank" class="btn" id="index_push_pc">马上发布项目</a>
+                            <a href="javascript:;" class="btn" id="index_push_pc" @click="submit()">马上发布项目</a>
                         </div>
                         <div class="project-mb">
                             <div class="filter">
                                 <div class="group">
                                   <select class="category" id="categoryMbList" value="选择项目类型" @change='chooseType("type",$event)'>
                                     <option disabled="disabled" selected="" value="选择项目类型">选择项目类型</option>
-                                    <option v-for='(item,index) in projectOptions.type' :key=index :value="item.name" >{{item.name}}</option>
+                                    <option v-for='(item,index) in projectOptions.type' :key=index :value="item.id" >{{item.title}}</option>
                                 </select>
                                 </div>
                                 <div class="group">
                                     <select class="term" id="termMbList" value="0"  @change='chooseType("time",$event)'>
                                         <option disabled="disabled" selected="" >选择项目时间</option>
-                                      <option v-for='(item,index) in projectOptions.time' :key=index :value="item" >{{item}}</option>
+                                      <option v-for='(item,index) in projectOptions.time' :key=index :value="item.id" >{{item.title}}</option>
                                     </select>
                                 </div>
                                 <div class="group">
                                     <select class="urgency" id="urgencyMbList" value="0"  @change='chooseType("urgency",$event)'>
                                     <option disabled="disabled" selected="" value="0">项目紧急程度</option>
-                                <option v-for='(item,index) in projectOptions.urgency' :key=index :value="item" >{{item}}</option>
+                                <option v-for='(item,index) in projectOptions.urgency' :key=index :value="item.id" >{{item.title}}</option>
                                 </select>
                                 </div>
                             </div>
-                            <a href="javascript:;" class="btn" id="index_push_mobile">马上发布</a>
+                            <a href="javascript:;" class="btn" id="index_push_mobile" @click="submit()">马上发布</a>
                         </div>
                     </div>
                     <!-- project E -->
@@ -362,12 +362,12 @@
         <!-- footer E -->
 
     </div>
-    <div id="formPop" class="form-pop-wrap">
+    <div id="formPop" class="form-pop-wrap" :class='ifPop?"active":""'>
         <div class="mask"></div>
         <div class="form-pop">
             <div class="hd">
                 <h2>留下您的联系方式</h2>
-                <i class="icon iconfont icon-nav-close"></i>
+                <i class="icon iconfont icon-nav-close" @click='$(ifPop = !ifPop)'></i>
             </div>
             <div class="bd">
                 <form>
@@ -427,29 +427,22 @@
 export default {
   data () {
     return {
-      projectType:"选择您的项目类型",
-      projectTime:"选择您的项目时间",
-      projectUrgency:"选择项目紧急程度",
-      projectOptions:{
-        // type:['移动APP开发','微信小程序','网站建设','平台开发','文娱直播','棋牌游戏','原型设计','UI设计','平面设计','LOGO设计'],
-        type:[
-          {name:'移动APP开发',src:'../../static/image/p1.png'},
-          {name:'微信小程序',src:'../../static/image/p2.png'},
-          {name:'网站建设',src:'../../static/image/p3.png'},
-          {name:'平台开发',src:'../../static/image/p4.png'},
-          {name:'文娱直播',src:'../../static/image/p5.png'},
-          {name:'棋牌游戏',src:'../../static/image/p6.png'},
-          {name:'原型设计',src:'../../static/image/p7.png'},
-          {name:'UI设计',src:'../../static/image/p8.png'},
-          {name:'平面设计',src:'../../static/image/p2.png'},
-          {name:'LOGO设计',src:'../../static/image/p3.png'},
-        ],
+      projectType:{id:null,title:"选择您的项目类型"},
+      projectTime: {id:null,title:"选择您的项目时间"},
+      projectUrgency:{id:null,title:"选择项目紧急程度"},
 
-        time:['超过6个月','3-6个月','1-3个月','少于1个月','少于1周'],
-        urgency:['不紧急','一般','非常紧急']
+      typeId:null,
+      timeId:null,
+      urgencyId:null,
+      projectOptions:{
+          type:[],
+          time:[],
+          urgency:[]
       },
+
       headerLink:['跳转1','跳转1','跳转1','跳转1','跳转1'],
-      ifMask:false
+      ifMask:false,
+      ifPop:true,
     };
   },
 
@@ -457,25 +450,65 @@ export default {
 
   computed: {},
  mounted:function(){  
+          // this.$http();
             
-          //  this.$axios.get("http://192.168.1.103/api/Project/getInfo")
-          //   .then(res=>{
-          //     console.log(res)
-          //   })
-          //   .catch(err=>{
-          //     console.log(err)
-          //   })
-              this.$axios.get("http://192.168.1.103/api/Project/upRelease")
+           this.$axios.get("http://192.168.1.103/api/Project/getInfo")
             .then(res=>{
-              console.log(res)
+              console.log(res.data)
+              let data = res.data.data;
+              this.projectOptions.type = data.project;
+              this.projectOptions.time = data.time;
+              this.projectOptions.urgency = data.degree;
+              console.log("this.projectOptions===========>",this.projectOptions);
             })
             .catch(err=>{
               console.log(err)
-            })         
+            })
+                  
 
         }  ,
 
   methods: {
+
+    submit(){
+
+
+      // 检测项目信息是否完整
+      if(this.projectType.id === null){
+        console.log("请选择项目类型");
+        return false;
+      }else if(this.projectTime.id  ===null){
+        console.log("请选择项目时间");
+        return false;
+      }else if(this.projectUrgency.id === null){
+        console.log("请项目紧急程度");
+        return false;
+      }
+      console.log("通过检测");
+
+
+
+
+      //  this.$axios({
+      //           method:'post',
+      //           url:"http://192.168.1.103/api/Project/upRelease",
+      //           data:{
+      //             "name":"zhangzepei",
+      //             "mobile":13145852187,
+      //             "code":123456,
+      //             "project":"1",
+      //             "time":"1",
+      //             "degree":"1"
+      //           }
+      //         })
+      //       .then(res=>{
+      //         console.log(res)
+      //       })
+      //       .catch(err=>{
+      //         console.log(err)
+      //       })    
+    },
+
     toggleNeeds(type) {
 
       let theType = {type:type};
@@ -503,41 +536,22 @@ export default {
       this.$refs.urgencyList.style.display='none';
     },
 
-    // test(list,event){
-    //   var value = event.target.value;
-      
-    //      if(list === 'type'){
-    //       this.projectType = value;
-    //       console.log("this.projectType========>", this.projectType );
-        
-    //   }
-    //   if(list === 'time'){
-    //     this.projectTime = value;
-    //       console.log("this.projectTime========>", this.projectTime );
-     
-    //   }
-    //   if(list === 'urgency'){
-    //         this.projectUrgency = value;
-    //       console.log("this.projectUrgency========>", this.projectUrgency );
-    //   }
-    // },
-
     chooseType(list,value){
-      if( typeof value == 'object'){
+      if(value.timeStamp ){
 
 
          if(list === 'type'){
-          this.projectType = value.target.value;
+          this.projectType.id = value.target.value;
           console.log("this.projectType========>", this.projectType );
         
       }
       if(list === 'time'){
-        this.projectTime = value.target.value;
+        this.projectTime.id = value.target.value;
           console.log("this.projectTime========>", this.projectTime );
      
       }
       if(list === 'urgency'){
-            this.projectUrgency = value.target.value;
+            this.projectUrgency.id = value.target.value;
           console.log("this.projectUrgency========>", this.projectUrgency );
 
       }
@@ -564,9 +578,6 @@ export default {
 
       }
     },
-    toggleMask(){
-      this.ifMask = !this.ifMask;
-    }
   }
 }
 
