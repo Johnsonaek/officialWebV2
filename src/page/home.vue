@@ -289,7 +289,7 @@
                     </fieldset>
                     <fieldset>
                         <input id="code" class="sms-code" type="text" placeholder="手机验证码" v-model="code">
-                        <span class="get-code" id="getCode">{{countDowncode}}</span>
+                        <span class="get-code" id="getCode" @click="getCode">{{countDowncode}}</span>
                     </fieldset>
                     <button class="btn" id="submitForm" @click="confirm()" >确认</button>
                 </form>
@@ -367,7 +367,7 @@ export default {
 
   computed: {},
  mounted:function(){  
-            
+       
           this.getProjectRequire();
                   
           this.getHomeIndex();
@@ -442,10 +442,9 @@ this .$toast.center( '请选择您的手机号码' );
         return false;
       }
       console.log("通过检测,发送请求");
-      this.ifPop = false;
-      this.ifSuccess = true;
+      
 
-
+    // 发送提交请求
       let data ={
                   "name":this.name,
                   "mobile":parseInt(this.mobile),
@@ -460,7 +459,12 @@ this .$toast.center( '请选择您的手机号码' );
          data,
          url
      }).then(res=>{
-
+            if(res.code = 0){
+this.ifPop = false;
+      this.ifSuccess = true;
+            }else{
+                this.$toast.center(res.msg);
+            }
      }).catch(err=>{
 
      })          
@@ -470,15 +474,18 @@ this .$toast.center( '请选择您的手机号码' );
     getCode(){
       if(true){
        this.countDowncode = this.countdown + 's 后重发'; 
+       this.countDown();
       }
     },
     countDown(){
-      setTimeout(() => {
-        this.countdown--;
-        if(this.countdown == 0){
+           var _self = this;
+        let interval = setInterval(() => {
+            _self.countdown--;
             
-        }
-      }, 1000);
+            if(_self.countdown<55){
+                clearInterval(_self.interval);
+            }
+        }, 1000);
     },
 
     toggleNeeds(type) {
