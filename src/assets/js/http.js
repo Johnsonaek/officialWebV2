@@ -1,22 +1,53 @@
-// import Axios from "axios";
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: JohnsonZzp
+ * @Date: 2020-06-02 16:26:37
+ * @LastEditors: JohnsonZzp
+ * @LastEditTime: 2020-06-04 14:04:09
+ */
+
+import Axios from "axios";
 
 
-// Vue.prototype.$axios = Axios;
 
-function http(data) {
-    this.$axios({
-            method: data.method,
-            url: data.url,
-            data: data.data
+function http(payload) {
+    let data = payload.data;
+    let headers = payload.headers || { 'Content-Type': 'application/x-www-form-urlencoded' };
+    let method = payload.method || 'post';
+    let url = payload.url;
+
+    // 改变data 的数据格式
+    let formData;
+    if (data) {
+        formData = new FormData();
+        Object.keys(data).forEach((key) => {
+            formData.append(key, data[key]);
+        });
+    } else {
+        formData = null
+    }
+
+    // 给url 加 域名
+    url = 'http://192.168.1.103/' + url;
+
+
+    return new Promise((resolve, reject) => {
+        Axios({
+            method,
+            data: formData,
+            url,
+            headers
+        }).then(res => {
+            resolve(res.data);
+            console.log("接口:", url, "的成功回调========》", res);
+        }).catch(err => {
+            reject(err.data);
+            console.log("接口:", url, "的失败回调========》", res);
         })
-        .then(res => {
-            console.log(res)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-
-
-
+    })
 }
+
+
+
 export default http;

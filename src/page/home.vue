@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="header header-mb cl">
-            <i class="menu-btn icon iconfont icon-nav-menu" id="showIndexNav" @click='$(ifMask = !ifMask)'></i>
+            <i class="menu-btn icon iconfont icon-nav-menu" id="showIndexNav" @click='(ifMask = !ifMask)'></i>
             <!-- <a href="javascript:;" class="push-btn" rel="nofollow">发布项目</a> -->
         </div>
         <div class="index-nav" id="indexNav">
@@ -146,52 +146,10 @@
                 </div>
                 <div class="bd">
                     <ul class="list cl">
-                        <li>
+                        <li v-for='(item,index) in project' :key=index>
                             <a href="javascript:;" rel="nofollow">
-                                <img src="@/assets/image/s1.png">
-                                <p>分销商城</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" rel="nofollow">
-                                <img src="@/assets/image/s2.png">
-                                <p>会员制电商</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" rel="nofollow">
-                                <img src="@/assets/image/s3.png">
-                                <p>互联网金融</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" rel="nofollow">
-                                <img src="@/assets/image/s4.png">
-                                <p>旅游</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" rel="nofollow">
-                                <img src="@/assets/image/s5.png">
-                                <p>社区团购</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" rel="nofollow">
-                                <img src="@/assets/image/s6.png">
-                                <p>直播</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" rel="nofollow">
-                                <img src="@/assets/image/s7.png">
-                                <p>影视APP</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" rel="nofollow">
-                                <img src="@/assets/image/s8.png">
-                                <p>企业官网</p>
+                                <img :src='item.img'>
+                                <p>{{item.title}}</p>
                             </a>
                         </li>
                     </ul>
@@ -205,62 +163,14 @@
                 </div>
                 <div class="bd">
                     <ul class="list cl candohref">
-                        <li>
-                            <img src="@/assets/image/p1.png">
+                      <li v-for='(item,index) in article' :key=index>
+                            <img :src="item.img">
                             <div>
-                                <span>原型设计</span>
-                                <p>文案文案文案文案文案文案 文案文案文案文案文案文案 文案文案文案文案文案文案 </p>
+                                <span>{{item.title}}</span>
+                                <p>{{item.subtitle}} </p>
                             </div>
                         </li>
-                        <li>
-                            <img src="@/assets/image/p2.png">
-                            <div>
-                                <span>UI设计</span>
-                                <p>文案文案文案文案文案文案 文案文案文案文案文案文案 文案文案文案文案文案文案 </p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="@/assets/image/p3.png">
-                            <div>
-                                <span>平面设计</span>
-                                <p>文案文案文案文案文案文案 文案文案文案文案文案文案 文案文案文案文案文案文案 </p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="@/assets/image/p4.png">
-                            <div>
-                                <span>LOGO设计</span>
-                                <p>文案文案文案文案文案文案 文案文案文案文案文案文案 文案文案文案文案文案文案 </p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="@/assets/image/p5.png">
-                            <div>
-                                <span>移动APP开发</span>
-                                <p>文案文案文案文案文案文案 文案文案文案文案文案文案 文案文案文案文案文案文案 </p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="@/assets/image/p6.png">
-                            <div>
-                                <span>微信小程序</span>
-                                <p>文案文案文案文案文案文案 文案文案文案文案文案文案 文案文案文案文案文案文案 </p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="@/assets/image/p7.png">
-                            <div>
-                                <span>文娱直播</span>
-                                <p>文案文案文案文案文案文案 文案文案文案文案文案文案 文案文案文案文案文案文案 </p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="@/assets/image/p8.png">
-                            <div>
-                                <span>原型设计</span>
-                                <p>文案文案文案文案文案文案 文案文案文案文案文案文案 文案文案文案文案文案文案 </p>
-                            </div>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -367,32 +277,32 @@
         <div class="form-pop">
             <div class="hd">
                 <h2>留下您的联系方式</h2>
-                <i class="icon iconfont icon-nav-close" @click='$(ifPop = !ifPop)'></i>
+                <i class="icon iconfont icon-nav-close" @click='(ifPop = !ifPop)'></i>
             </div>
             <div class="bd">
                 <form>
                     <fieldset>
-                        <input id="name" type="text" placeholder="您的姓名">
+                        <input id="name" type="text" placeholder="您的姓名" v-model="name">
                     </fieldset>
                     <fieldset>
-                        <input id="mobile" type="text" placeholder="联系电话">
+                        <input id="mobile" type="text" placeholder="联系电话" v-model="mobile">
                     </fieldset>
                     <fieldset>
-                        <input id="code" class="sms-code" type="text" placeholder="手机验证码">
-                        <span class="get-code" id="getCode">获取验证码</span>
+                        <input id="code" class="sms-code" type="text" placeholder="手机验证码" v-model="code">
+                        <span class="get-code" id="getCode">{{countDowncode}}</span>
                     </fieldset>
-                    <button class="btn" id="submitForm" onclick="_czc.push(﻿[&#39;_trackEvent&#39;,&#39;首页线索提交&#39;,&#39;click&#39;]);">确认</button>
+                    <button class="btn" id="submitForm" @click="confirm()" >确认</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <div id="submitSuccessPop" class="form-pop-wrap submit-success">
+    <div id="submitSuccessPop" class="form-pop-wrap submit-success" :class='ifSuccess?"active":""'>
         <div class="mask"></div>
         <div class="form-pop">
             <div class="hd">
                 <h2></h2>
-                <i class="icon iconfont icon-nav-close"></i>
+                <i class="icon iconfont icon-nav-close" @click='ifSuccess = !ifSuccess'></i>
             </div>
             <div class="bd">
                 <i class="icon iconfont icon-selected"></i>
@@ -424,16 +334,16 @@
 </template>
 
 <script>
+import qs from 'qs';
 export default {
   data () {
     return {
       projectType:{id:null,title:"选择您的项目类型"},
       projectTime: {id:null,title:"选择您的项目时间"},
       projectUrgency:{id:null,title:"选择项目紧急程度"},
-
-      typeId:null,
-      timeId:null,
-      urgencyId:null,
+      name:null,
+      mobile:null,
+      code:null,
       projectOptions:{
           type:[],
           time:[],
@@ -442,7 +352,14 @@ export default {
 
       headerLink:['跳转1','跳转1','跳转1','跳转1','跳转1'],
       ifMask:false,
-      ifPop:true,
+      ifPop:false,
+      ifSuccess:false,
+      countDowncode:'获取验证码',
+      countdown:60,
+      // 行业方案
+      project:null,
+      // 文章
+      article:null
     };
   },
 
@@ -450,63 +367,118 @@ export default {
 
   computed: {},
  mounted:function(){  
-          // this.$http();
             
-           this.$axios.get("http://192.168.1.103/api/Project/getInfo")
-            .then(res=>{
-              console.log(res.data)
-              let data = res.data.data;
-              this.projectOptions.type = data.project;
-              this.projectOptions.time = data.time;
-              this.projectOptions.urgency = data.degree;
-              console.log("this.projectOptions===========>",this.projectOptions);
-            })
-            .catch(err=>{
-              console.log(err)
-            })
+          this.getProjectRequire();
                   
-
+          this.getHomeIndex();
         }  ,
 
   methods: {
 
+
+    // 获取项目需求列表
+    getProjectRequire(){
+       this.$axios.get("http://192.168.1.103/api/Project/getInfo")
+          
+            this.$http({
+                method:'get',
+                url:'api/Project/getInfo'
+            }).then(res=>{
+                console.log(res.data)
+              let data = res.data;
+              this.projectOptions.type = data.project;
+              this.projectOptions.time = data.time;
+              this.projectOptions.urgency = data.degree;
+              console.log("this.projectOptions===========>",this.projectOptions);
+            }).catch(err=>{
+                
+            })
+    },
+
+    // 获取首页信息
+    getHomeIndex(){
+    this.$http({
+        url:'api/index/index',
+        method:'get'
+    }).then(res=>{
+        this.article = res.data.project;
+        this.project = res.data.article;
+        console.log("this is res========>",res);
+    }).catch(err=>{
+         console.log("this is err========>",err);
+    });
+    },
+
+
+
+    // 获得项目信息，提交
     submit(){
 
 
       // 检测项目信息是否完整
       if(this.projectType.id === null){
-        console.log("请选择项目类型");
+         this .$toast.center( '请选择项目类型' );
         return false;
       }else if(this.projectTime.id  ===null){
-        console.log("请选择项目时间");
+          this .$toast.center( '请选择项目时间' );
         return false;
       }else if(this.projectUrgency.id === null){
-        console.log("请项目紧急程度");
+          this .$toast.center( '请项目紧急程度' );
         return false;
       }
-      console.log("通过检测");
+      console.log("通过检测,弹出窗口");
+      this.ifPop = true;      
+    },
+    // 确认个人信息，然后发送到后台
+    confirm(){
+        if(!this.name){
+        this .$toast.center( '请填写您的姓名' );
+        return false;
+      }else if(!this.mobile){
+this .$toast.center( '请选择您的手机号码' );
+        return false;
+      }else if(!this.code){
+        this .$toast.center( '请填写您的验证码' );
+        return false;
+      }
+      console.log("通过检测,发送请求");
+      this.ifPop = false;
+      this.ifSuccess = true;
 
 
+      let data ={
+                  "name":this.name,
+                  "mobile":parseInt(this.mobile),
+                  "code":parseInt(this.code),
+                  "project":parseInt(this.projectType.id),
+                  "time":parseInt(this.projectTime.id),
+                  "degree":parseInt(this.projectUrgency.id)
+                };
+      let url = 'api/Project/upRelease';          
 
+     this.$http({
+         data,
+         url
+     }).then(res=>{
 
-      //  this.$axios({
-      //           method:'post',
-      //           url:"http://192.168.1.103/api/Project/upRelease",
-      //           data:{
-      //             "name":"zhangzepei",
-      //             "mobile":13145852187,
-      //             "code":123456,
-      //             "project":"1",
-      //             "time":"1",
-      //             "degree":"1"
-      //           }
-      //         })
-      //       .then(res=>{
-      //         console.log(res)
-      //       })
-      //       .catch(err=>{
-      //         console.log(err)
-      //       })    
+     }).catch(err=>{
+
+     })          
+
+    },
+
+    getCode(){
+      if(true){
+       this.countDowncode = this.countdown + 's 后重发'; 
+      }
+    },
+    countDown(){
+      setTimeout(() => {
+        this.countdown--;
+        if(this.countdown == 0){
+            
+        }
+      }, 1000);
     },
 
     toggleNeeds(type) {
