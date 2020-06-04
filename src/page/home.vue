@@ -5,7 +5,7 @@
         <div class="header header-pc">
             <div class="wrap cl">
                 <div class="logo">
-                    <a href="javascript:;"><img class="img1" src="@/assets/image/logo.png" alt="大谦"><img class="img2" src="@/assets/image/logo-name.png" alt="大谦"></a>
+                    <a href="javascript:;"><img class="img1" :src="infomation.company_logo" alt="大谦"></a>
                 </div>
                 <ul class="nav cl">
                     <li><i class="icon iconfont icon-nav-tel"></i>4008886455</li>
@@ -249,22 +249,22 @@
                 </dl>
                 <dl class="links footer-company">
                     <dt>集团网站响应式模板</dt>
-                    <dd>公司：某某股份有限公司</dd>
-                    <dd>手机：18888888888</dd>
-                    <dd>邮箱：admin@admin.com</dd>
+                    <dd>公司：{{infomation.company_name}}</dd>
+                    <dd>手机：{{infomation.company_mobile}}</dd>
+                    <dd>邮箱：{{infomation.company_mail}}</dd>
                 </dl>
                 <dl class="links footer-company">
                     <dt class="hide">联系方式</dt>
-                    <dd>电话 400-400-4000</dd>
-                    <dd>传真 400-400-4000</dd>
-                    <dd>邮箱编码：136000</dd>
+                    <dd>电话 {{infomation.company_phone}}</dd>
+                    <dd>传真 {{infomation.company_fax}}</dd>
+                    <dd>邮箱编码：{{infomation.company_zipcode}}</dd>
                 </dl>
                 <!-- <div class="weixin">
                     <p>关注微信公众号</p>
                     <img src="./static/index-qrcode.a91a24f.jpeg">
                 </div> -->
             </div>
-            <p class="cr wrap">© 大谦科技&nbsp;2020</p>
+            <p class="cr wrap">© {{infomation.company_copyright}}</p>
         </div>
         <div style="display: none">
       
@@ -338,6 +338,16 @@ import qs from 'qs';
 export default {
   data () {
     return {
+        infomation:{
+            company_name:null,
+            company_mobile:null,
+            company_mail:null,
+            company_phone:null,
+            company_fax:null,
+            company_zipcode:null,
+            company_copyright:null,
+            company_logo:null
+        },
       projectType:{id:null,title:"选择您的项目类型"},
       projectTime: {id:null,title:"选择您的项目时间"},
       projectUrgency:{id:null,title:"选择项目紧急程度"},
@@ -367,7 +377,8 @@ export default {
 
   computed: {},
  mounted:function(){  
-       
+        var _self = this;
+        this.getInfo();
           this.getProjectRequire();
                   
           this.getHomeIndex();
@@ -376,9 +387,25 @@ export default {
   methods: {
 
 
+    // 获取基本信息
+    getInfo(){
+        var _self = this;
+        let url = 'api/index/info';
+        this.$http({
+            method:'get',
+            url
+        }).then(res=>{
+            if(res.code === 1){
+                _self.infomation = res.data;
+            }
+        }).catch(err=>{
+            _self.$toast.center(err.msg);
+        });
+    },
+
     // 获取项目需求列表
     getProjectRequire(){
-       this.$axios.get("http://192.168.1.103/api/Project/getInfo")
+       
           
             this.$http({
                 method:'get',
@@ -481,7 +508,7 @@ this.ifPop = false;
            var _self = this;
         let interval = setInterval(() => {
             _self.countdown--;
-            
+            console.log("_self.countdown============>",_self.countdown);
             if(_self.countdown<55){
                 clearInterval(_self.interval);
             }

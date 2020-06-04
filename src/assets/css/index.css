@@ -582,3 +582,7 @@ body {
   border-color: transparent;
   box-shadow: none;
 }
+.img1 {
+  height: 35px !important;
+  width: 131px !important;
+}
