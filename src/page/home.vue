@@ -499,18 +499,27 @@ this.ifPop = false;
     },
 
     getCode(){
-      if(true){
+         
+      if(this.$tool.isMobile('1314585a2187')){
+          if(this.countdown !== 60){
+            return false;
+        }
        this.countDowncode = this.countdown + 's 后重发'; 
        this.countDown();
+       
       }
     },
     countDown(){
+       
            var _self = this;
         let interval = setInterval(() => {
             _self.countdown--;
+            _self.countDowncode = this.countdown + 's 后重发'; 
             console.log("_self.countdown============>",_self.countdown);
-            if(_self.countdown<55){
-                clearInterval(_self.interval);
+            if(_self.countdown == 1){
+                _self.countDowncode = '获取验证码';
+                 _self.countdown = 60;
+                clearInterval(interval);
             }
         }, 1000);
     },
