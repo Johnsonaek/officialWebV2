@@ -6,10 +6,10 @@ import router from './router'
 import Axios from "axios";
 
 
-import '@/assets/css/reset.css'
-import '@/assets/css/iconfont/iconfont.css'
-import '@/assets/css/common.css'
-import '@/assets/css/index.css'
+import './assets/css/reset.css'
+import './assets/css/iconfont/iconfont.css'
+import './assets/css/common.css'
+import './assets/css/index.css'
 import http from '../src/assets/js/http'
 
 import './components/Toast/toast.css';

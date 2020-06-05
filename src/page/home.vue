@@ -183,42 +183,42 @@
                 <div class="bd">
                     <ul class="list cl" id="safeguard">
                         <li>
-                            <img src="@/assets/image/c1.png">
+                            <img src="../assets/image/c1.png">
                             <p class="txt">专业的商务洽谈</p>
                             <p class="desc">1对1具体沟通要求</p>
                             <p class="desc">专业梳理需求方案</p>
                             <p class="desc">签订正规项目合同</p>
                         </li>
                         <li>
-                            <img src="@/assets/image/c2.png">
+                            <img src="../assets/image/c2.png">
                             <p class="txt">准确的产品策划</p>
                             <p class="desc">调研行业受众与竞品分析</p>
                             <p class="desc">Axure专业策划原型图</p>
                             <p class="desc">创意UI、UE资深设计师</p>
                         </li>
                         <li>
-                            <img src="@/assets/image/c3.png">
+                            <img src="../assets/image/c3.png">
                             <p class="txt">成熟的技术架构</p>
                             <p class="desc">标准化技术开发管控流程</p>
                             <p class="desc">纯原生、Uni-app、Html5等语言</p>
                             <p class="desc">多兼容高并发服务器方案</p>
                         </li>
                         <li>
-                            <img src="@/assets/image/c4.png">
+                            <img src="../assets/image/c4.png">
                             <p class="txt">复合的测试模式</p>
                             <p class="desc">多轮BUG排查与修复</p>
                             <p class="desc">性能、兼容与适配测试</p>
                             <p class="desc">稳定安全渗透测试</p>
                         </li>
                         <li>
-                            <img src="@/assets/image/c5.png">
+                            <img src="../assets/image/c5.png">
                             <p class="txt">完善的项目管理</p>
                             <p class="desc">指定项目负责人对项目负责</p>
                             <p class="desc">成立项目小组实时反馈</p>
                             <p class="desc">把控周期进度与项目难点</p>
                         </li>
                         <li>
-                            <img src="@/assets/image/c6.png">
+                            <img src="../assets/image/c6.png">
                             <p class="txt">增值与售后服务</p>
                             <p class="desc">提供7*12小时响应机制</p>
                             <p class="desc">12个月免费维护服务</p>
@@ -231,7 +231,7 @@
             <!-- company S-->
 
             <div class="mod company">
-                <img src="@/assets/image/a1.png" alt="">
+                <img src="../assets/image/a1.png" alt="">
             </div>
             <!-- company E-->
 
@@ -245,7 +245,7 @@
                 </dl>
                 <dl class="links">
                     <dt>关注</dt>
-                    <dd><img src="@/assets/image/share.jpg" alt=""><img src="@/assets/image/share.jpg" alt=""><img src="@/assets/image/share.jpg" alt=""></dd>
+                    <dd><img src="../assets/image/share.jpg" alt=""><img src="../assets/image/share.jpg" alt=""><img src="../assets/image/share.jpg" alt=""></dd>
                 </dl>
                 <dl class="links footer-company">
                     <dt>集团网站响应式模板</dt>
@@ -499,18 +499,29 @@ this.ifPop = false;
     },
 
     getCode(){
-      if(true){
+         
+      if(this.$tool.isCode6(this.Code)){
+          if(this.countdown !== 60){
+            return false;
+        }
        this.countDowncode = this.countdown + 's 后重发'; 
        this.countDown();
+       
+      }else{
+          this.$toast.center("请填写您的验证码");
       }
     },
     countDown(){
+       
            var _self = this;
         let interval = setInterval(() => {
             _self.countdown--;
+            _self.countDowncode = this.countdown + 's 后重发'; 
             console.log("_self.countdown============>",_self.countdown);
-            if(_self.countdown<55){
-                clearInterval(_self.interval);
+            if(_self.countdown == 1){
+                _self.countDowncode = '获取验证码';
+                 _self.countdown = 60;
+                clearInterval(interval);
             }
         }, 1000);
     },
