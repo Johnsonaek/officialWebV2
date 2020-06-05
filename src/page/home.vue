@@ -245,7 +245,20 @@
                 </dl>
                 <dl class="links">
                     <dt>关注</dt>
-                    <dd><img src="../assets/image/share.jpg" alt=""><img src="../assets/image/share.jpg" alt=""><img src="../assets/image/share.jpg" alt=""></dd>
+                    <dd>
+                        <div class="logoItem logoWeChat">
+                            <img class="small" src="../assets/image/share.jpg" alt="" >
+                            <img class="big" src="../assets/image/share.jpg" alt="" >
+                        </div>
+                        <div class="logoItem logoQQ"> 
+                            <img class="small" src="../assets/image/share.jpg" alt="" >
+                            <img class="big" src="../assets/image/share.jpg" alt="" >
+                        </div>
+                        <div class="logoItem logoWeibo">
+                            <img class="small" src="../assets/image/share.jpg" alt="" >
+                            <img class="big" src="../assets/image/share.jpg" alt="" >
+                        </div>
+                    </dd>
                 </dl>
                 <dl class="links footer-company">
                     <dt>集团网站响应式模板</dt>

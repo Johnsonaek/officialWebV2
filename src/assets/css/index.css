@@ -586,3 +586,29 @@ body {
   height: 35px !important;
   width: 131px !important;
 }
+.logoItem {
+  display: inline-block;
+}
+.logoWeChat,
+.logoQQ,
+.logoWeibo {
+  position: relative;
+}
+.logoWeChat .big,
+.logoQQ .big,
+.logoWeibo .big {
+  position: absolute;
+  background-color: #333;
+  left: 0;
+  bottom: 0px;
+  transform: translateX(-50%);
+  transform: translateY(-30%);
+  height: 100px;
+  width: 100px;
+  display: none;
+}
+.logoWeChat:hover .big,
+.logoQQ:hover .big,
+.logoWeibo:hover .big {
+  display: block;
+}
