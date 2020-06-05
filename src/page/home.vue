@@ -285,7 +285,7 @@
                         <input id="name" type="text" placeholder="您的姓名" v-model="name">
                     </fieldset>
                     <fieldset>
-                        <input id="mobile" type="text" placeholder="联系电话" v-model="mobile">
+                        <input id="mobile" type="text" placeholder="手机号码" v-model="mobile">
                     </fieldset>
                     <fieldset>
                         <input id="code" class="sms-code" type="text" placeholder="手机验证码" v-model="code">
@@ -458,14 +458,14 @@ export default {
     },
     // 确认个人信息，然后发送到后台
     confirm(){
-        if(!this.name){
-        this .$toast.center( '请填写您的姓名' );
+        if(!this.$tool.isName(this.name)){
+        this .$toast.center( '请正确填写您的姓名' );
         return false;
-      }else if(!this.mobile){
-this .$toast.center( '请选择您的手机号码' );
+      }else if(!this.$tool.isMobile(this.mobile)){
+this .$toast.center( '请正确填写您的手机号码' );
         return false;
-      }else if(!this.code){
-        this .$toast.center( '请填写您的验证码' );
+      }else if(!this.$tool.isMobile(this.code)){
+        this .$toast.center( '请正确填写您的验证码' );
         return false;
       }
       console.log("通过检测,发送请求");
@@ -500,7 +500,7 @@ this.ifPop = false;
 
     getCode(){
          
-      if(this.$tool.isMobile('1314585a2187')){
+      if(this.$tool.isMobile(this.mobile)){
           if(this.countdown !== 60){
             return false;
         }
