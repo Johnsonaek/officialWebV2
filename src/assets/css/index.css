@@ -612,3 +612,7 @@ body {
 .logoWeibo:hover .big {
   display: block;
 }
+#categoryList li img {
+  height: 70px !important;
+  width: auto !important;
+}
