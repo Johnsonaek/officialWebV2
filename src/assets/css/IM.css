@@ -13,9 +13,6 @@
   padding-top: 40px;
   width: 1054px;
 }
-.container-IM .list .item:nth-child(even) {
-  flex-direction: row-reverse;
-}
 .container-IM .list .item .left {
   width: 527px;
   height: 570px;
@@ -42,4 +39,10 @@
   font-size: 14px;
   color: #777;
   margin-top: 24px;
+}
+.container-IM .list .item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.container-IM .list .item:nth-child(even) .right {
+  padding-left: 0;
 }
