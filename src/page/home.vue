@@ -13,8 +13,12 @@
                         <a href="javascript:;">首页</a>
                     </li>
                     <li>
-                        <a href="javascript:;">
-                产品解决方案                                                    </a></li>
+                        <router-link to='./IM'>
+                            <a href="javascript:;">
+                        产品解决方案                                                   
+                        </a></router-link>
+                        
+                </li>
                     <li>
                         <a href="javascript:;" rel="nofollow" target="_blank">
                             <!-- <i class="icon iconfont icon-hot"></i>云队友   -->
@@ -260,13 +264,13 @@
                         </div>
                     </dd>
                 </dl>
-                <dl class="links footer-company">
+                <dl class="links footer-company box-left">
                     <dt>集团网站响应式模板</dt>
                     <dd>公司：{{infomation.company_name}}</dd>
                     <dd>手机：{{infomation.company_mobile}}</dd>
                     <dd>邮箱：{{infomation.company_mail}}</dd>
                 </dl>
-                <dl class="links footer-company">
+                <dl class="links footer-company box-left">
                     <dt class="hide">联系方式</dt>
                     <dd>电话 {{infomation.company_phone}}</dd>
                     <dd>传真 {{infomation.company_fax}}</dd>
@@ -347,7 +351,6 @@
 </template>
 
 <script>
-import qs from 'qs';
 export default {
   data () {
     return {

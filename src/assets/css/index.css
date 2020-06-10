@@ -616,3 +616,12 @@ body {
   height: 70px !important;
   width: auto !important;
 }
+.links-wrap dl {
+  width: 265px !important;
+}
+.box-left {
+  text-align: left !important;
+}
+.box-right {
+  text-align: right !important;
+}
