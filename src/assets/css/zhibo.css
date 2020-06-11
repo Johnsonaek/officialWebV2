@@ -1,0 +1,45 @@
+@media screen and (min-width: 1060px) {
+  .wap {
+    display: none;
+  }
+  .web {
+    width: 100%;
+  }
+  .web .top {
+    background-image: url(../../../static/image-zhibo/web/bg-top.png);
+    width: 10rem;
+    height: 5.052083rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 0.505208rem;
+  }
+  .web .top .content {
+    margin: 0 auto;
+    background: #000;
+    width: 5.833333rem;
+    height: 3.645833rem;
+  }
+  .web .top .content .left {
+    width: 5.833333rem;
+    height: 3.645833rem;
+    text-align: left;
+  }
+  .web .top .content .left .header-top {
+    font-size: 0.4375rem;
+    color: #F18C15;
+    line-height: 0.614583rem;
+    height: 0.614583rem;
+  }
+  .web .top .content .left .dec {
+    color: #FFFFFF;
+    font-size: 0.145833rem;
+  }
+}
+@media screen and (max-width: 1059px) {
+  .wap {
+    display: block;
+  }
+  .web {
+    display: none;
+  }
+}

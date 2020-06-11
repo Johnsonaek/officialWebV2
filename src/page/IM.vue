@@ -4,7 +4,7 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-10 11:56:06
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-11 11:42:46
+ * @LastEditTime: 2020-06-11 15:10:44
 --> 
 <template>
   <div class="container-IM">
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 import 'bootstrap/dist/js/bootstrap.min.js'
 export default {
   data () {
@@ -173,4 +173,5 @@ export default {
 </script>
 <style scoped>
 @import '../assets/css/IM.css';
+@import 'bootstrap/dist/css/bootstrap.min.css'
 </style>

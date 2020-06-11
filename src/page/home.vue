@@ -26,8 +26,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:;list/8.html">
-                游戏开发                                                    </a></li>
+                        <router-link to='./zhibo'>
+                            <a href="javascript:;">
+                        游戏开发                                                   
+                        </a></router-link>
+                        </li>
                     <li>
                         <a href="javascript:;" rel="nofollow">
                 小程序开发                                                    </a></li>
