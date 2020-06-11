@@ -4,7 +4,7 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-01 11:30:23
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-05 10:12:19
+ * @LastEditTime: 2020-06-10 17:38:34
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -12,6 +12,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Axios from "axios";
+import 'bootstrap';
+import $ from 'jquery';
 
 
 import './assets/css/reset.css'

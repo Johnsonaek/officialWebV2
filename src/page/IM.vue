@@ -4,30 +4,36 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-10 11:56:06
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-10 16:19:19
+ * @LastEditTime: 2020-06-11 11:42:46
 --> 
 <template>
   <div class="container-IM">
-    <div class="header-IM">
+    <div class="row">
+      <div class="header-IM col-xs-12 ">
         <img src="../../static/image-IM/header.png" alt="">
+       </div>
     </div>
-    <ul class="list">
-      <li class="item" v-for="(item,index) in serviceList" :key=index>
-        <div class="left">
+    <ul class="list container">
+  
+      <li class="item row" v-for="(item,index) in serviceList" :key=index>
+        <div class="left col-md-6 col-xs-12">
           <img :src="item.img" alt="">
         </div>
-        <div class="right">
+        <div class=" col-md-6 col-xs-12 right">
           <span class="title">{{item.title}}</span>
           <p class="innerItem" v-for="(innerItem,innerIndex) in item.list" :key=innerIndex>
             {{innerItem}}
           </p>
         </div>
       </li>
-    </ul>
+
+    </ul>			
   </div>
 </template>
 
 <script>
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 export default {
   data () {
     return {
@@ -159,7 +165,7 @@ export default {
 
   computed: {},
 
-  mounted: {},
+ // mounted: {},
 
   methods: {}
 }
