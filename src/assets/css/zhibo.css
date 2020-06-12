@@ -15,12 +15,13 @@
   }
   .web .top .content {
     margin: 0 auto;
-    background: #000;
     width: 5.833333rem;
     height: 3.645833rem;
+    display: flex;
+    justify-content: space-between;
   }
   .web .top .content .left {
-    width: 5.833333rem;
+    width: 3.708333rem;
     height: 3.645833rem;
     text-align: left;
   }
@@ -33,6 +34,56 @@
   .web .top .content .left .dec {
     color: #FFFFFF;
     font-size: 0.145833rem;
+    opacity: 0.8;
+  }
+  .web .top .content .left .list {
+    width: 3.708333rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .web .top .content .left .list .item {
+    height: 0.666667rem;
+    width: 0.666667rem;
+    background: rgba(0, 0, 0, 0.2);
+    margin-right: 0.260417rem;
+    margin-top: 0.260417rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.104167rem;
+  }
+  .web .top .content .left .list .item img {
+    height: 0.260417rem;
+    width: auto;
+  }
+  .web .top .content .left .list .item span {
+    color: white;
+    font-size: 0.09375rem;
+    margin-top: 0.046875rem;
+  }
+  .web .top .content .right {
+    width: 1.671875rem;
+    height: 3.369792rem;
+    background-size: 100% auto;
+    align-self: flex-end;
+    position: relative;
+    z-index: 5;
+  }
+  .web .top .content .right .demo {
+    position: relative;
+    z-index: 4;
+    height: 3.177083rem;
+    width: 1.46875rem;
+    padding-top: 0.09375rem;
+  }
+  .web .top .content .right .kuan {
+    width: 1.671875rem;
+    height: 3.369792rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
   }
 }
 @media screen and (max-width: 1059px) {

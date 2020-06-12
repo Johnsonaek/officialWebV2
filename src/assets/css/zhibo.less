@@ -14,16 +14,16 @@
         padding-top: .505208rem;
         .content{
           margin: 0 auto;
-          background: #000;
           //opacity: .5;
           width: 5.833333rem;
           height: 3.645833rem;
-          // display: flex;
-          // justify-content: space-between;
+          display: flex;
+          justify-content: space-between;
           .left{
-            width: 5.833333rem;
+            width: 3.708333rem;
             height: 3.645833rem;
             text-align: left;
+           
             .header-top{
               font-size: .4375rem;
               color: #F18C15;
@@ -33,10 +33,61 @@
             .dec{
               color: #FFFFFF;
               font-size: .145833rem;
+              opacity: .8;
+            }
+            .list{
+  
+              width: 3.708333rem;
+              display: flex;
+              flex-wrap: wrap;
+              .item{
+                height: .666667rem;
+                width: .666667rem;
+                background: rgba(0,0,0, .2);
+                margin-right: .260417rem;
+                margin-top: .260417rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: .104167rem;
+                img{
+                  height: .260417rem;
+                  width: auto;
+                }
+                span{
+                  color: white;
+                  font-size: .09375rem;
+                  margin-top: .046875rem;
+                }
+
+              }
+              
             }
           }
           .right{
-
+            width: 1.671875rem;
+            height: 3.369792rem;
+           
+            background-size: 100% auto;
+            align-self: flex-end;
+            position: relative;
+            z-index: 5;
+            .demo{
+              position: relative;
+              z-index: 4;
+              height: 3.177083rem;
+              width: 1.46875rem;
+              padding-top: .09375rem;
+            }
+            .kuan{
+              width: 1.671875rem;
+              height: 3.369792rem;
+              position: absolute;
+              left:0;
+              top: 0;
+              z-index: 5;
+            }
           }
         }
     }
