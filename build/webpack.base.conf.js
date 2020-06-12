@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: JohnsonZzp
+ * @Date: 2020-06-01 11:30:23
+ * @LastEditors: JohnsonZzp
+ * @LastEditTime: 2020-06-12 17:19:37
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
@@ -19,8 +27,7 @@ module.exports = {
         path: config.build.assetsRoot,
         filename: '[name].js',
         publicPath: process.env.NODE_ENV === 'production' ?
-            config.build.assetsPublicPath :
-            config.dev.assetsPublicPath
+            config.build.assetsPublicPath : config.dev.assetsPublicPath
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
@@ -34,6 +41,10 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: vueLoaderConfig
+            },
+            { //从这一段上面是默认的！不用改！下面是没有的需要你手动添加，相当于是编译识别sass!
+                test: /\.scss$/,
+                loaders: ["style", "css", "sass"]
             },
             {
                 test: /\.js$/,

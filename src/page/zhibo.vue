@@ -4,7 +4,7 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-11 15:30:09
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-12 11:33:06
+ * @LastEditTime: 2020-06-12 18:31:30
 -->
 <template>
   <div class="container">
@@ -31,10 +31,71 @@
             </div>
           </div>
         </div>
-        <div class="middle"></div>
-        <div class="bottom"></div>
+        <div class="middle">
+          <div class="middle-title">
+            <span>直播系统</span>
+            <span>应用场景</span>
+          </div>
+          <div class="middle-dec">
+            持续带动新行业，多领域的快速发展
+          </div>
+          <div class="middle-list">
+            <div class="item" v-for="(item,index) in middleApplication" :key=index>
+                  <img :src="item.icon" alt="">
+                  <span>{{item.title}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="bottom-title">
+            <span>10+营销变现功能</span>
+            <span>玩法</span>
+          </div>
+        </div>
     </div>
-    <div class="wap">wap</div>
+    <div class="wap">
+      <div class="lunbo-top">
+        1
+      </div>
+      <div class="gongneng">
+        <div class="gongneng-title">
+          <span>直播系统</span>
+          <span>功能</span>
+        </div>
+        <div class="dec">
+          以追求极致用户体验为目标，持续更新系统功能
+        </div>
+        <div class="list">
+            <div class="item" v-for="(item,index) in dianbo" :key='index'>
+              <div class="box">
+                <img :src="item.iconWhite" alt="">
+              </div>
+              <span>{{item.title}}</span>
+            </div>
+        </div>
+      </div>
+      <div class="lunbo-bottom"></div>
+      <div class="changjing">
+        <div class="gongneng-title">
+          <span>直播系统</span>
+          <span>应用场景</span>
+        </div>
+        <div class="dec">
+          持续带动新行业，多领域的快速发展
+        </div>
+        <div class="list">
+            <div class="item" v-for="(item,index) in middleApplication" :key='index'>
+              <div class="box">
+                <img :src="item.icon" alt="">
+              </div>
+              <span>{{item.title}}</span>
+            </div>
+        </div>
+      </div>
+      <div class="zhibo-footer">
+        --   广州大谦科技有限公司   --
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -59,63 +120,73 @@ export default {
         {
           iconWhite:'../../static/image-zhibo/web/gntb3.png',
           iconBlue:'../../static/image-zhibo/web/gntb03.png',
-          title:'直播带货',
+          title:'动态贴纸',
           demo:'../../static/image-zhibo/web/dongtai.gif'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb4.png',
           iconBlue:'../../static/image-zhibo/web/gntb04.png',
-          title:'直播连麦PK',
+          title:'转盘抽奖',
           demo:'../../static/image-zhibo/web/zhuanpan.gif'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb5.png',
           iconBlue:'../../static/image-zhibo/web/gntb05.png',
-          title:'直播带货',
+          title:'幸运礼物',
           demo:'../../static/image-zhibo/web/liwu.gif'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb6.png',
           iconBlue:'../../static/image-zhibo/web/gntb06.png',
-          title:'直播连麦PK',
+          title:'主播守护',
           demo:'../../static/image-zhibo/web/shouhu.gif'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb2.png',
           iconBlue:'../../static/image-zhibo/web/gntb02.png',
-          title:'直播带货',
+          title:'小视频拍摄',
           demo:'../../static/image-zhibo/web/xiaoshipin.gif'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb8.png',
           iconBlue:'../../static/image-zhibo/web/gntb08.png',
-          title:'直播连麦PK',
+          title:'付费直播',
           demo:'../../static/image-zhibo/web/zhibo.gif'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb9.png',
           iconBlue:'../../static/image-zhibo/web/gntb09.png',
-          title:'直播带货',
-          demo:'../../static/image-zhibo/web/fenxiao.gif'
+          title:'三级分销',
+          demo:'../../static/image-zhibo/web/fenxiao.jpg'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb10.png',
           iconBlue:'../../static/image-zhibo/web/gntb010.png',
-          title:'直播连麦PK',
+          title:'弹幕消息',
           demo:'../../static/image-zhibo/web/danmu.gif'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb11.png',
           iconBlue:'../../static/image-zhibo/web/gntb011.png',
-          title:'直播带货',
+          title:'礼物打赏',
           demo:'../../static/image-zhibo/web/dashang.gif'
         },
         {
           iconWhite:'../../static/image-zhibo/web/gntb12.png',
           iconBlue:'../../static/image-zhibo/web/gntb012.png',
-          title:'直播连麦PK',
+          title:'频道分类',
           demo:'../../static/image-zhibo/web/pindao.gif'
         },
+      ],
+      middleApplication:[
+        {icon:'../../static/image-zhibo/web/cj01.png',title:'综艺娱乐'},
+        {icon:'../../static/image-zhibo/web/cj02.png',title:'游戏电竞'},
+        {icon:'../../static/image-zhibo/web/cj03.png',title:'在线教育'},
+        {icon:'../../static/image-zhibo/web/cj04.png',title:'电商购物'},
+        {icon:'../../static/image-zhibo/web/cj05.png',title:'竞技体育'},
+        {icon:'../../static/image-zhibo/web/cj06.png',title:'金融财经'},
+        {icon:'../../static/image-zhibo/web/cj07.png',title:'户外旅游'},
+        {icon:'../../static/image-zhibo/web/cj08.png',title:'综艺娱乐'}
       ]
     };
   },
@@ -132,6 +203,6 @@ export default {
 }
 
 </script>
-<style scoped>
+<style scoped lang='scss'>
   @import '../assets/css/zhibo.css';
 </style>
