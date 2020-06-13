@@ -1,3 +1,5 @@
+
+
 .container-IM{
   width: 100%;
   .row{
@@ -14,6 +16,8 @@
     padding: 40px 15px;
     width:100%;
     .item{
+
+    
       
       .left{
         width: 100%;
@@ -37,12 +41,13 @@
           border-bottom: 2px solid #226db7;
         }
         p{
+          margin-bottom: 0;
           font-size: 14px;
           color: #777;
           margin-top: 24px;
         }
       }
-  
+     
       &:nth-child(even){
         flex-direction: row-reverse;
         .right{
@@ -56,4 +61,15 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 1059px){
+     .right{
+       height: auto !important;
+       margin-top: 2rem !important; 
+       margin-bottom: 2rem !important;
+       span{
+        padding-top: 0 !important;
+       }
+     }   
 }

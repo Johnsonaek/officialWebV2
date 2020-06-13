@@ -184,7 +184,6 @@
     overflow: hidden;
   }
   .wap .lunbo-top {
-    background-color: #aaa;
     margin: 0.4rem auto 0;
     height: 3.52rem;
     width: 8.533333rem;
@@ -192,7 +191,6 @@
   .wap .gongneng {
     width: 100%;
     margin: 1.066667rem auto 0;
-    background-color: #aaa;
   }
   .wap .gongneng .gongneng-title {
     width: 100%;
@@ -241,10 +239,25 @@
     height: 0.8rem;
     width: auto;
   }
+  .wap .middle-lunbo {
+    width: 100%;
+    margin: 0.64rem auto 0;
+  }
+  .wap .middle-lunbo h1 {
+    text-align: center;
+    color: #DB6F45;
+    font-size: 0.693333rem;
+    height: 0.986667rem;
+    line-height: 0.986667rem;
+  }
+  .wap .middle-lunbo .lunbo {
+    margin: 0.48rem auto 0;
+    height: 13.626667rem;
+    width: 7.6rem;
+  }
   .wap .changjing {
     width: 100%;
     margin: 1.066667rem auto 0;
-    background-color: #aaa;
   }
   .wap .changjing .gongneng-title {
     width: 100%;

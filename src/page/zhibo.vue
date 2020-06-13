@@ -4,7 +4,7 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-11 15:30:09
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-13 14:56:45
+ * @LastEditTime: 2020-06-13 16:48:21
 -->
 <template>
   <div class="container">
@@ -62,9 +62,21 @@
         </div>
     </div>
     <div class="wap">
-      <div class="lunbo-top">
-        1
-      </div>
+      <!-- <div >
+        style="width:100%;margin:20px auto;height:400px"
+      </div> -->
+
+      <div class="lunbo-top" >
+      <!-- Using the slider component -->
+      <slider ref="slider" :options="options">
+          <!-- slideritem wrapped package with the components you need -->
+          <slideritem v-for="(item,index) in someListTop" :key="index" :style="item.style">{{item.html}}</slideritem>
+          <!-- Customizable loading -->
+          <div slot="loading">loading...</div>
+      </slider>
+ </div>
+
+      
       <div class="gongneng">
         <div class="gongneng-title">
           <span>直播系统</span>
@@ -81,6 +93,18 @@
               <span>{{item.title}}</span>
             </div>
         </div>
+      </div>
+      <div class="middle-lunbo">
+        <h1>直播系统动态效果图</h1>
+        <div class="lunbo" >
+      <!-- Using the slider component -->
+      <slider ref="slider" :options="options">
+          <!-- slideritem wrapped package with the components you need -->
+          <slideritem v-for="(item,index) in someListMiddle" :key="index" :style="item.style">{{item.html}}</slideritem>
+          <!-- Customizable loading -->
+          <div slot="loading">loading...</div>
+      </slider>
+ </div>
       </div>
       <div class="lunbo-bottom"></div>
       <div class="changjing">
@@ -107,10 +131,62 @@
   </div>
 </template>
 <script>
+import { slider, slideritem } from 'vue-concise-slider'
 import '../../static/js/flexible'
 export default {
   data () {
     return {
+
+      // wap轮播图设置
+      //data list [array]
+        someListTop:[
+          {
+      
+            style: {
+               'background': '#4bbfc3'
+            }
+          },
+          {
+      
+            style: {
+              'background': '#4bbfc3',
+            }
+          },
+          {
+         
+            style: {
+              'background': '#7baabe'
+            }
+          }
+        ],
+         someListMiddle:[
+          {
+         
+            style: {
+               'background': '#4bbfc3'
+            }
+          },
+          {
+       
+            style: {
+              'background': '#4bbfc3',
+            }
+          },
+          {
+       
+            style: {
+              'background': '#7baabe'
+            }
+          }
+        ],
+        //Slider configuration [obj]
+        options: {
+          currentPage: 0,
+           autoplay:'1000',
+           loop:true,
+           preventRebound: true
+        },
+
       activeTop:0,
       config: [
         {
@@ -259,7 +335,10 @@ export default {
     };
   },
 
-  components: {},
+  components: {
+      slider,
+      slideritem
+    },
 
   computed: {},
 
