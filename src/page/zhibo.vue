@@ -4,7 +4,7 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-11 15:30:09
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-12 18:31:30
+ * @LastEditTime: 2020-06-13 14:56:45
 -->
 <template>
   <div class="container">
@@ -51,6 +51,14 @@
             <span>10+营销变现功能</span>
             <span>玩法</span>
           </div>
+          <ul class="bottom-lunbo">
+            <transition-group name="list" tag="p" mode='out-in'>
+              <li v-for="(item,index) in bottomLunbo" v-bind:key="item.demo" class="list-item" :style="config[index]">
+                <img :src="item.demo" alt="" @click="toggle(index)">
+              </li>
+            </transition-group>
+
+          </ul>
         </div>
     </div>
     <div class="wap">
@@ -104,6 +112,33 @@ export default {
   data () {
     return {
       activeTop:0,
+      config: [
+        {
+          position: "relative",
+          zIndex: 4,
+       
+        },
+        {
+          position: "relative",
+          zIndex: 4,
+       
+        },
+        {
+          position: "relative",
+          zIndex: 4,
+       
+        },
+        {
+          position: "relative",
+          zIndex: 4,
+       
+        },
+        {
+          position: "relative",
+          zIndex: 4,
+       
+        },
+      ],
       dianbo:[
         {
           iconWhite:'../../static/image-zhibo/web/gntb7.png',
@@ -187,7 +222,40 @@ export default {
         {icon:'../../static/image-zhibo/web/cj06.png',title:'金融财经'},
         {icon:'../../static/image-zhibo/web/cj07.png',title:'户外旅游'},
         {icon:'../../static/image-zhibo/web/cj08.png',title:'综艺娱乐'}
-      ]
+      ],
+      bottomLunbo:[
+         {
+          iconWhite:'../../static/image-zhibo/web/gntb8.png',
+          iconBlue:'../../static/image-zhibo/web/gntb08.png',
+          title:'付费直播',
+          demo:'../../static/image-zhibo/web/zhibo.gif'
+        },
+        {
+          iconWhite:'../../static/image-zhibo/web/gntb9.png',
+          iconBlue:'../../static/image-zhibo/web/gntb09.png',
+          title:'三级分销',
+          demo:'../../static/image-zhibo/web/fenxiao.jpg'
+        },
+        {
+          iconWhite:'../../static/image-zhibo/web/gntb10.png',
+          iconBlue:'../../static/image-zhibo/web/gntb010.png',
+          title:'弹幕消息',
+          demo:'../../static/image-zhibo/web/danmu.gif'
+        },
+        {
+          iconWhite:'../../static/image-zhibo/web/gntb11.png',
+          iconBlue:'../../static/image-zhibo/web/gntb011.png',
+          title:'礼物打赏',
+          demo:'../../static/image-zhibo/web/dashang.gif'
+        },
+        {
+          iconWhite:'../../static/image-zhibo/web/gntb12.png',
+          iconBlue:'../../static/image-zhibo/web/gntb012.png',
+          title:'频道分类',
+          demo:'../../static/image-zhibo/web/pindao.gif'
+        },
+      ],
+
     };
   },
 
@@ -198,7 +266,29 @@ export default {
   methods: {
     chooseDemo(index){
       this.activeTop = index;
-    }
+    },
+      toggle(index){
+        if(index>1){
+          this.next();
+          setTimeout(() => {
+            this.config[4].zIndex = 4;
+          }, 1100);
+        }else{
+          this.last();
+        }
+      },
+      last() {
+        
+       let tmp = this.bottomLunbo[this.bottomLunbo.length - 1];
+       this.bottomLunbo.splice(this.bottomLunbo.length - 1, 1)
+      this.bottomLunbo.splice(0, 0, tmp)
+    },
+    next() {
+      this.config[4].zIndex = 3;
+      let tmp = this.bottomLunbo[0];
+       this.bottomLunbo.splice(0, 1)
+      this.bottomLunbo.splice(this.bottomLunbo.length, 0, tmp)
+    },
   }
 }
 
