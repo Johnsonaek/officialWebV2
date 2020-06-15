@@ -48,7 +48,7 @@ exports.cssLoaders = function(options) {
             return ExtractTextPlugin.extract({
                 use: loaders,
                 fallback: 'vue-style-loader',
-                publicPath: "../../"
+                publicPath: "../../" // 作用是设置打包过程中提取css的方法   就是在资源在css引用时要改
             })
         } else {
             return ['vue-style-loader'].concat(loaders)
