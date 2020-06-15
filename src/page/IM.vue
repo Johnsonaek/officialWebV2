@@ -4,7 +4,7 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-10 11:56:06
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-11 15:10:44
+ * @LastEditTime: 2020-06-15 15:25:19
 --> 
 <template>
   <div class="container-IM">
@@ -39,7 +39,7 @@ export default {
     return {
       serviceList:[
         {
-          img:'../../static/image-IM/yun.png',
+          img:'./static/image-IM/yun.png',
           title:'对比IM云服务',
           list:[
             '掌控全部源代码,想怎么改就怎么改，不受制于人',
@@ -49,7 +49,7 @@ export default {
           ]
         },
         {
-          img:'../../static/image-IM/msg.png',
+          img:'./static/image-IM/msg.png',
           title:'即时消息/单聊',
           list:[
             '支持文字、图片、表情、语音、视频、位置、名片、文件、红包等',
@@ -58,7 +58,7 @@ export default {
           ]
         },
         {
-          img:'../../static/image-IM/group.png',
+          img:'./static/image-IM/group.png',
           title:'群组/讨论组',
           list:[
             '支持主动加入、邀请加入、踢出好友、禁言等功能',
@@ -67,7 +67,7 @@ export default {
           ]
         },
         {
-          img:'../../static/image-IM/nearby.png',
+          img:'./static/image-IM/nearby.png',
           title:'附近的人',
           list:[
             '默认根据距离的远近显示附近的人',
@@ -75,7 +75,7 @@ export default {
           ]
         },
         {
-          img:'../../static/image-IM/my.png',
+          img:'./static/image-IM/my.png',
           title:'个人中心',
           list:[
             '管理好友和黑名单、管理我的收藏、管理我的朋友圈等',
@@ -84,7 +84,7 @@ export default {
           ]
         },
         {
-          img:'../../static/image-IM/video.png',
+          img:'./static/image-IM/video.png',
           title:'语音/视频聊天',
           list:[
             '高清的视频聊天、零延迟 ',
@@ -93,7 +93,7 @@ export default {
           ]
         },
         {
-          img:'../../static/image-IM/friends.png',
+          img:'./static/image-IM/friends.png',
           title:'朋友圈',
           list:[
             '和微信的朋友圈无限相似',
@@ -103,7 +103,7 @@ export default {
           ]
         },
         {
-           img:'../../static/image-IM/colleague.png',
+           img:'./static/image-IM/colleague.png',
           title:'公司通讯录',
           list:[
             '树的表现形式，使公司组织架构一目了然',
@@ -112,7 +112,7 @@ export default {
           ]
         },
         {
-         img:'../../static/image-IM/shin.png',
+         img:'./static/image-IM/shin.png',
           title:'百变皮肤',
           list:[
             '支持中文简体、中文繁体、英文，实时切换',
@@ -120,7 +120,7 @@ export default {
           ]
         },
         {
-          img:'../../static/image-IM/pay.png',
+          img:'./static/image-IM/pay.png',
           title:'支付系统',
           list:[
             '支持微信、支付宝、银行卡充值和提现，手续费低',
@@ -130,7 +130,7 @@ export default {
           ]
         },
         {
-         img:'../../static/image-IM/WechatIMG80.png',
+         img:'./static/image-IM/WechatIMG80.png',
           title:'短视频功能',
           list:[
             '在线录制 滤镜美颜',
@@ -139,7 +139,7 @@ export default {
           ]
         },
         {
-           img:'../../static/image-IM/download.png',
+           img:'./static/image-IM/download.png',
           title:'直播间/聊天室',
           list:[
             '视频质量高清，支持苹果设备和安卓设备',
@@ -149,7 +149,7 @@ export default {
           ]
         },
         {
-           img:'../../static/image-IM/other.png',
+           img:'./static/image-IM/other.png',
           title:'其他亮点',
           list:[
             '支持是否需要好友验证',
