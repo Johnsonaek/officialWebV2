@@ -4,7 +4,7 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-11 15:30:09
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-13 16:48:21
+ * @LastEditTime: 2020-06-15 15:33:42
 -->
 <template>
   <div class="container">
@@ -217,118 +217,118 @@ export default {
       ],
       dianbo:[
         {
-          iconWhite:'../../static/image-zhibo/web/gntb7.png',
-          iconBlue:'../../static/image-zhibo/web/gntb07.png',
+          iconWhite:'./static/image-zhibo/web/gntb7.png',
+          iconBlue:'./static/image-zhibo/web/gntb07.png',
           title:'直播带货',
-          demo:'../../static/image-zhibo/web/daihuo.gif'
+          demo:'./static/image-zhibo/web/daihuo.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb1.png',
-          iconBlue:'../../static/image-zhibo/web/gntb01.png',
+          iconWhite:'./static/image-zhibo/web/gntb1.png',
+          iconBlue:'./static/image-zhibo/web/gntb01.png',
           title:'直播连麦PK',
-          demo:'../../static/image-zhibo/web/lianmai.gif'
+          demo:'./static/image-zhibo/web/lianmai.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb3.png',
-          iconBlue:'../../static/image-zhibo/web/gntb03.png',
+          iconWhite:'./static/image-zhibo/web/gntb3.png',
+          iconBlue:'./static/image-zhibo/web/gntb03.png',
           title:'动态贴纸',
-          demo:'../../static/image-zhibo/web/dongtai.gif'
+          demo:'./static/image-zhibo/web/dongtai.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb4.png',
-          iconBlue:'../../static/image-zhibo/web/gntb04.png',
+          iconWhite:'./static/image-zhibo/web/gntb4.png',
+          iconBlue:'./static/image-zhibo/web/gntb04.png',
           title:'转盘抽奖',
-          demo:'../../static/image-zhibo/web/zhuanpan.gif'
+          demo:'./static/image-zhibo/web/zhuanpan.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb5.png',
-          iconBlue:'../../static/image-zhibo/web/gntb05.png',
+          iconWhite:'./static/image-zhibo/web/gntb5.png',
+          iconBlue:'./static/image-zhibo/web/gntb05.png',
           title:'幸运礼物',
-          demo:'../../static/image-zhibo/web/liwu.gif'
+          demo:'./static/image-zhibo/web/liwu.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb6.png',
-          iconBlue:'../../static/image-zhibo/web/gntb06.png',
+          iconWhite:'./static/image-zhibo/web/gntb6.png',
+          iconBlue:'./static/image-zhibo/web/gntb06.png',
           title:'主播守护',
-          demo:'../../static/image-zhibo/web/shouhu.gif'
+          demo:'./static/image-zhibo/web/shouhu.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb2.png',
-          iconBlue:'../../static/image-zhibo/web/gntb02.png',
+          iconWhite:'./static/image-zhibo/web/gntb2.png',
+          iconBlue:'./static/image-zhibo/web/gntb02.png',
           title:'小视频拍摄',
-          demo:'../../static/image-zhibo/web/xiaoshipin.gif'
+          demo:'./static/image-zhibo/web/xiaoshipin.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb8.png',
-          iconBlue:'../../static/image-zhibo/web/gntb08.png',
+          iconWhite:'./static/image-zhibo/web/gntb8.png',
+          iconBlue:'./static/image-zhibo/web/gntb08.png',
           title:'付费直播',
-          demo:'../../static/image-zhibo/web/zhibo.gif'
+          demo:'./static/image-zhibo/web/zhibo.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb9.png',
-          iconBlue:'../../static/image-zhibo/web/gntb09.png',
+          iconWhite:'./static/image-zhibo/web/gntb9.png',
+          iconBlue:'./static/image-zhibo/web/gntb09.png',
           title:'三级分销',
-          demo:'../../static/image-zhibo/web/fenxiao.jpg'
+          demo:'./static/image-zhibo/web/fenxiao.jpg'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb10.png',
-          iconBlue:'../../static/image-zhibo/web/gntb010.png',
+          iconWhite:'./static/image-zhibo/web/gntb10.png',
+          iconBlue:'./static/image-zhibo/web/gntb010.png',
           title:'弹幕消息',
-          demo:'../../static/image-zhibo/web/danmu.gif'
+          demo:'./static/image-zhibo/web/danmu.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb11.png',
-          iconBlue:'../../static/image-zhibo/web/gntb011.png',
+          iconWhite:'./static/image-zhibo/web/gntb11.png',
+          iconBlue:'./static/image-zhibo/web/gntb011.png',
           title:'礼物打赏',
-          demo:'../../static/image-zhibo/web/dashang.gif'
+          demo:'./static/image-zhibo/web/dashang.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb12.png',
-          iconBlue:'../../static/image-zhibo/web/gntb012.png',
+          iconWhite:'./static/image-zhibo/web/gntb12.png',
+          iconBlue:'./static/image-zhibo/web/gntb012.png',
           title:'频道分类',
-          demo:'../../static/image-zhibo/web/pindao.gif'
+          demo:'./static/image-zhibo/web/pindao.gif'
         },
       ],
       middleApplication:[
-        {icon:'../../static/image-zhibo/web/cj01.png',title:'综艺娱乐'},
-        {icon:'../../static/image-zhibo/web/cj02.png',title:'游戏电竞'},
-        {icon:'../../static/image-zhibo/web/cj03.png',title:'在线教育'},
-        {icon:'../../static/image-zhibo/web/cj04.png',title:'电商购物'},
-        {icon:'../../static/image-zhibo/web/cj05.png',title:'竞技体育'},
-        {icon:'../../static/image-zhibo/web/cj06.png',title:'金融财经'},
-        {icon:'../../static/image-zhibo/web/cj07.png',title:'户外旅游'},
-        {icon:'../../static/image-zhibo/web/cj08.png',title:'综艺娱乐'}
+        {icon:'./static/image-zhibo/web/cj01.png',title:'综艺娱乐'},
+        {icon:'./static/image-zhibo/web/cj02.png',title:'游戏电竞'},
+        {icon:'./static/image-zhibo/web/cj03.png',title:'在线教育'},
+        {icon:'./static/image-zhibo/web/cj04.png',title:'电商购物'},
+        {icon:'./static/image-zhibo/web/cj05.png',title:'竞技体育'},
+        {icon:'./static/image-zhibo/web/cj06.png',title:'金融财经'},
+        {icon:'./static/image-zhibo/web/cj07.png',title:'户外旅游'},
+        {icon:'./static/image-zhibo/web/cj08.png',title:'综艺娱乐'}
       ],
       bottomLunbo:[
          {
-          iconWhite:'../../static/image-zhibo/web/gntb8.png',
-          iconBlue:'../../static/image-zhibo/web/gntb08.png',
+          iconWhite:'./static/image-zhibo/web/gntb8.png',
+          iconBlue:'./static/image-zhibo/web/gntb08.png',
           title:'付费直播',
-          demo:'../../static/image-zhibo/web/zhibo.gif'
+          demo:'./static/image-zhibo/web/zhibo.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb9.png',
-          iconBlue:'../../static/image-zhibo/web/gntb09.png',
+          iconWhite:'./static/image-zhibo/web/gntb9.png',
+          iconBlue:'./static/image-zhibo/web/gntb09.png',
           title:'三级分销',
-          demo:'../../static/image-zhibo/web/fenxiao.jpg'
+          demo:'./static/image-zhibo/web/fenxiao.jpg'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb10.png',
-          iconBlue:'../../static/image-zhibo/web/gntb010.png',
+          iconWhite:'./static/image-zhibo/web/gntb10.png',
+          iconBlue:'./static/image-zhibo/web/gntb010.png',
           title:'弹幕消息',
-          demo:'../../static/image-zhibo/web/danmu.gif'
+          demo:'./static/image-zhibo/web/danmu.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb11.png',
-          iconBlue:'../../static/image-zhibo/web/gntb011.png',
+          iconWhite:'./static/image-zhibo/web/gntb11.png',
+          iconBlue:'./static/image-zhibo/web/gntb011.png',
           title:'礼物打赏',
-          demo:'../../static/image-zhibo/web/dashang.gif'
+          demo:'./static/image-zhibo/web/dashang.gif'
         },
         {
-          iconWhite:'../../static/image-zhibo/web/gntb12.png',
-          iconBlue:'../../static/image-zhibo/web/gntb012.png',
+          iconWhite:'./static/image-zhibo/web/gntb12.png',
+          iconBlue:'./static/image-zhibo/web/gntb012.png',
           title:'频道分类',
-          demo:'../../static/image-zhibo/web/pindao.gif'
+          demo:'./static/image-zhibo/web/pindao.gif'
         },
       ],
 

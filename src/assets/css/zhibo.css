@@ -74,7 +74,7 @@
     position: relative;
     z-index: 4;
     height: 3.177083rem;
-    width: 1.46875rem;
+    width: 1.488875rem;
     padding-top: 0.09375rem;
   }
   .web .top .content .right .kuan {
@@ -164,6 +164,7 @@
     display: block;
     height: 3.229167rem;
     width: 1.5625rem;
+    z-index: 6;
     background: url(../../../static/image-zhibo/web/iphone.png) no-repeat;
     background-size: 100% 100%;
   }
@@ -175,7 +176,7 @@
   }
   .web .bottom .bottom-lunbo .list-item img {
     height: 2.5rem;
-    width: 1.385417rem;
+    width: 1.395417rem;
   }
 }
 @media screen and (max-width: 1059px) {
