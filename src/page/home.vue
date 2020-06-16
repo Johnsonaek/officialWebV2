@@ -2,7 +2,7 @@
   <div id="container">
      <div id="doc">
         <!-- header S -->
-        <div class="header header-pc">
+        <!-- <div class="header header-pc">
             <div class="wrap cl">
                 <div class="logo">
                     <a href="javascript:;"><img class="img1" :src="infomation.company_logo" alt="大谦"></a>
@@ -21,7 +21,7 @@
                 </li>
                     <li>
                         <a href="javascript:;" rel="nofollow" target="_blank">
-                            <!-- <i class="icon iconfont icon-hot"></i>云队友   -->
+                           
                             <div class="tip">APP开发</div>
                         </a>
                     </li>
@@ -39,7 +39,8 @@
                 关于大谦                                                    </a></li>
                 </ul>
             </div>
-        </div>
+        </div> -->
+        <header-web whereProp="shouye"></header-web>
         <div class="header header-mb cl">
             <i class="menu-btn icon iconfont icon-nav-menu" id="showIndexNav" @click='(ifMask = !ifMask)'></i>
             <!-- <a href="javascript:;" class="push-btn" rel="nofollow">发布项目</a> -->
@@ -344,7 +345,10 @@
 
     <div class="mask2" :class='ifMask?"active":""'>
       <li v-for="(item,index) in headerLink" :key=index >
-          {{item}}
+        
+          <router-link :to='item.link'>
+                {{item.title}}
+          </router-link>
       </li>
     </div>
 
@@ -354,6 +358,7 @@
 </template>
 
 <script>
+import HeaderWeb from '../components/web-header/webHeader'
 export default {
   data () {
     return {
@@ -379,7 +384,16 @@ export default {
           urgency:[]
       },
 
-      headerLink:['跳转1','跳转1','跳转1','跳转1','跳转1'],
+      headerLink:[
+          {
+          title:'IM',
+          link:'./IM'
+      },
+      {
+          title:'直播',
+          link:'./zhibo'
+      }
+      ],
       ifMask:false,
       ifPop:false,
       ifSuccess:false,
@@ -392,7 +406,9 @@ export default {
     };
   },
 
-  components: {},
+  components: {
+      HeaderWeb
+  },
 
   computed: {},
  mounted:function(){  

@@ -4,11 +4,12 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-11 15:30:09
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-15 15:33:42
+ * @LastEditTime: 2020-06-16 17:10:10
 -->
 <template>
   <div class="container">
     <div class="web">
+      <Header whereProp="zhibo"></Header>
         <div class="top">
           <div class="content">
             <div class="left">  
@@ -57,8 +58,9 @@
                 <img :src="item.demo" alt="" @click="toggle(index)">
               </li>
             </transition-group>
-
           </ul>
+          <h1>11111</h1>
+            <p>22222</p>
         </div>
     </div>
     <div class="wap">
@@ -132,6 +134,7 @@
 </template>
 <script>
 import { slider, slideritem } from 'vue-concise-slider'
+import Header from '../components/web-header/webHeader'
 import '../../static/js/flexible'
 export default {
   data () {
@@ -163,19 +166,19 @@ export default {
           {
          
             style: {
-               'background': '#4bbfc3'
+               'background': 'url(./static/image-zhibo/web/fenxiao.jpg)'
             }
           },
           {
        
             style: {
-              'background': '#4bbfc3',
+              'background': 'url(./static/image-zhibo/web/daihuo.gif)',
             }
           },
           {
        
             style: {
-              'background': '#7baabe'
+              'background': 'url(./static/image-zhibo/web/zhuanpan.gif)'
             }
           }
         ],
@@ -337,7 +340,8 @@ export default {
 
   components: {
       slider,
-      slideritem
+      slideritem,
+      Header
     },
 
   computed: {},

@@ -569,6 +569,9 @@ body {
   padding-top: 30%;
   display: none;
 }
+.mask2 a {
+  color: #F65434;
+}
 .active {
   display: block;
 }

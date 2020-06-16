@@ -4,10 +4,11 @@
  * @Author: JohnsonZzp
  * @Date: 2020-06-10 11:56:06
  * @LastEditors: JohnsonZzp
- * @LastEditTime: 2020-06-15 15:25:19
+ * @LastEditTime: 2020-06-16 17:22:43
 --> 
 <template>
   <div class="container-IM">
+    <Header  whereProp="im"></Header>
     <div class="row">
       <div class="header-IM col-xs-12 ">
         <img src="../../static/image-IM/header.png" alt="">
@@ -34,6 +35,7 @@
 <script>
 
 import 'bootstrap/dist/js/bootstrap.min.js'
+import Header from '../components/web-header/webHeader'
 export default {
   data () {
     return {
@@ -161,7 +163,7 @@ export default {
     };
   },
 
-  components: {},
+  components: {Header},
 
   computed: {},
 
